@@ -10,7 +10,7 @@ import MarkAsRead from "./MarkAsRead";
 import NotificationItem from "./NotificationItem";
 import ViewAll from "./ViewAll";
 import Separator from "@/components/ui/Separator";
-import styles from "@/components/header/Header.module.css";
+import styles from "@/components/header/header.module.css";
 
 const Notification = () => {
   return (
