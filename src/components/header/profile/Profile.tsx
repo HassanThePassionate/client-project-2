@@ -5,7 +5,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import styles from "@/components/header/Header.module.css";
+import styles from "@/components/header/header.module.css";
 import style from "@/components/header/notification/notification.module.css";
 import { links } from "@/constant/ProfileLinksData";
 import ProfileItem from "./ProfileItem";
