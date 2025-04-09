@@ -1,4 +1,4 @@
-const Briefcase = () => {
+const BriefCase = () => {
   return (
     <svg
       width='60'
@@ -93,4 +93,4 @@ const Briefcase = () => {
   );
 };
 
-export default Briefcase;
+export default BriefCase;

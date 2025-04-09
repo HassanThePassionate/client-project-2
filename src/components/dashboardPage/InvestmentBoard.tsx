@@ -7,9 +7,10 @@ import Toggle from "./Toggle";
 import FileSearch from "../svgs/FileSearch";
 
 import { Link } from "react-router-dom";
-import Briefcase from "../svgs/BriefCase";
+
 import Filters from "../InvestPage/Filters";
 import DownloadBtn from "../portfolioPage/DownloadBtn";
+import BriefCase from "../svgs/BriefCase";
 
 type InvestmentType = "active" | "finish";
 
@@ -137,7 +138,7 @@ export default function InvestmentDashboard({
         {activeTab === "finish" && (
           <div className='flex flex-col items-center justify-center text-center gap-6'>
             <div className=' flex  w-[60px] h-[60px] items-center justify-center'>
-              <Briefcase />
+              <BriefCase />
             </div>
             <div className='flex flex-col items-center'>
               <h4 className='mb-6 text-2xl font-semibold leading-[32px]'>
