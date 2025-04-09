@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 
 import Filters from "../InvestPage/Filters";
 import DownloadBtn from "../portfolioPage/DownloadBtn";
-import BriefCase from "../svgs/BriefCase";
+import BriefCase from "@/components/svgs/BriefCase";
 
 type InvestmentType = "active" | "finish";
 
