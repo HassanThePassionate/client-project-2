@@ -14,7 +14,7 @@ import { cn } from "@/lib/utils";
 import Separator from "@/components/ui/Separator";
 import Logout from "@/components/svgs/Logout";
 import myStyles from "./profile.module.css";
-import Menu from "./Menu";
+
 const Profile = () => {
   return (
     <DropdownMenu>
@@ -36,7 +36,6 @@ const Profile = () => {
               </p>
             </div>
           </div>
-          <Menu />
         </div>
         <Separator className='my-2' />
         <div className=' flex flex-col gap-2'>
