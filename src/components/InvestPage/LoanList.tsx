@@ -7,6 +7,7 @@ import type { Loan } from "@/types/loan";
 import { Badge } from "@/components/ui/badge";
 import style from "./invest.module.css";
 import GiftIcon from "../svgs/GiftIcon";
+import { cn } from "@/lib/utils";
 interface LoanListProps {
   loans: Loan[];
   sortField: keyof Loan;
@@ -110,7 +111,15 @@ export function LoanList({
                   </div>
                 </td>
                 <td className='px-4 py-4'>
-                  <Badge variant='outline' className={style["badge-2"]}>
+                  <Badge
+                    variant='outline'
+                    className={cn(
+                      "uppercase",
+                      style["badge-2"],
+                      loan.status === "Fully Invested" &&
+                        "!text-[#212f40] !bg-[#daeef7]"
+                    )}
+                  >
                     {loan.status}
                   </Badge>
                   <div className='text-shadow-2 text-xs mt-2 text-muted-foreground'>
@@ -128,7 +137,15 @@ export function LoanList({
                   {loan.scheduleType}
                 </td>
                 <td className='px-4 py-4'>
-                  <Badge variant='outline' className={style["badge-3"]}>
+                  <Badge
+                    variant='outline'
+                    className={cn(
+                      loan.risk !== "BAA1" &&
+                        loan.risk !== "BAA2" &&
+                        "!bg-[#f2d777]",
+                      style["badge-3"]
+                    )}
+                  >
                     {loan.risk}
                   </Badge>
                 </td>

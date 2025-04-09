@@ -63,6 +63,11 @@ const InvestPage = () => {
       filtered = filtered.filter((loan) =>
         activeFilters.loanStatus.includes(loan.status)
       );
+      console.log("Filtered loans by status:", filtered);
+      console.log(
+        "Active status filters:",
+        activeFilters.loanStatus.includes("Open")
+      );
     }
 
     if (activeFilters.riskCategory) {
@@ -138,7 +143,7 @@ const InvestPage = () => {
                 </span>
               </div>
             </div>
-            <div className={cn("justify-end", style.filters)}>
+            <div className={cn("!justify-end", style.filters)}>
               <div className='min-w-[456px] gap-3 px-6 flex justify-end self-start'>
                 <div className={style.search}>
                   <span className='text-[#8e959e] mr-3'>

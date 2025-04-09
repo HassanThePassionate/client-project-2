@@ -69,7 +69,7 @@ export function LoanGrid({ loans }: LoanGridProps) {
               <div className='absolute top-3 left-3 flex gap-2'>
                 <Badge
                   variant='outline'
-                  className='bg-green-50 text-green-700 hover:bg-green-100 font-medium'
+                  className='bg-green-50 text-green-700 hover:bg-green-100 font-medium uppercase'
                 >
                   {loan.status}
                 </Badge>
