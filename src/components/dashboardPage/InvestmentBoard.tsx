@@ -5,8 +5,11 @@ import style from "./dashboard.module.css";
 import { cn } from "@/lib/utils";
 import Toggle from "./Toggle";
 import FileSearch from "../svgs/FileSearch";
-import Briefcase from "../svgs/Briefcase";
+
 import { Link } from "react-router-dom";
+import Briefcase from "../svgs/BriefCase";
+import Filters from "../InvestPage/Filters";
+import DownloadBtn from "../portfolioPage/DownloadBtn";
 
 type InvestmentType = "active" | "finish";
 
@@ -22,12 +25,14 @@ interface InvestmentDashboardProps {
   title?: string;
   investments?: Investment[];
   className?: string;
+  doubleFilters?: boolean;
 }
 
 export default function InvestmentDashboard({
   title = "Your latest investments",
   investments = [],
   className,
+  doubleFilters,
 }: InvestmentDashboardProps) {
   const [activeTab, setActiveTab] = useState<InvestmentType>("active");
   const [filters, setFilters] = useState<Record<string, string>>({});
@@ -43,9 +48,27 @@ export default function InvestmentDashboard({
 
   return (
     <div className={cn("w-full rounded-lg border bg-white ", className)}>
-      <div className='mb-6 flex items-center justify-between py-7 px-6'>
-        <h2 className='text-2xl font-semibold text-gray-900'>{title}</h2>
-        <Toggle onChange={setActiveTab} viewMode={activeTab} />
+      <div>
+        {!doubleFilters && (
+          <div className='mb-6 flex items-center justify-between py-7 px-6'>
+            <h2 className='text-2xl font-semibold text-gray-900'>{title}</h2>
+            <Toggle onChange={setActiveTab} viewMode={activeTab} />
+          </div>
+        )}
+        {doubleFilters && (
+          <>
+            <h2 className='text-2xl  py-7 px-6 font-semibold text-gray-900'>
+              {title}
+            </h2>
+            <div className='flex items-center justify-between'>
+              <div className='w-full pl-6'>
+                <Toggle onChange={setActiveTab} viewMode={activeTab} />
+              </div>
+              <Filters />
+              <DownloadBtn />
+            </div>
+          </>
+        )}
       </div>
 
       <div className='flex min-h-[428px] flex-col items-center justify-center'>

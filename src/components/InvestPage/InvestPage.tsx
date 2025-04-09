@@ -1,26 +1,22 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Filter from "../svgs/Filter";
-import Search from "../svgs/Search";
 import style from "./invest.module.css";
-
-import ViewToggle from "./ViewToggle";
 import type { Loan } from "@/types/loan";
 import { LoanList } from "./LoanList";
 import { LoanGrid } from "./LoanGrid";
 import { getLoanData } from "@/constant/LoanData";
 import { FilterModal, type FilterState } from "./FilterModal";
-import { cn } from "@/lib/utils";
+import Filters from "./Filters";
+import { useFilter } from "../context/filter-context";
 
 const InvestPage = () => {
+  const { searchQuery, viewMode, setIsFilterModalOpen, isFilterModalOpen } =
+    useFilter();
   const [loans, setLoans] = useState<Loan[]>([]);
   const [filteredLoans, setFilteredLoans] = useState<Loan[]>([]);
-  const [searchQuery, setSearchQuery] = useState("");
   const [sortField, setSortField] = useState<keyof Loan>("listingDate");
   const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc");
-  const [viewMode, setViewMode] = useState<"list" | "grid">("list");
-  const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
   const [activeFilters, setActiveFilters] = useState<FilterState>({
     interestRange: [6, 14],
     loanPeriod: [6, 72],
@@ -143,33 +139,7 @@ const InvestPage = () => {
                 </span>
               </div>
             </div>
-            <div className={cn("!justify-end", style.filters)}>
-              <div className='min-w-[456px] gap-3 px-6 flex justify-end self-start'>
-                <div className={style.search}>
-                  <span className='text-[#8e959e] mr-3'>
-                    <Search />
-                  </span>
-                  <input
-                    placeholder='Search for loan ID'
-                    className={style.input}
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                  />
-                </div>
-                <ViewToggle viewMode={viewMode} onChange={setViewMode} />
-                <div>
-                  <button
-                    className={style["filter-button"]}
-                    onClick={() => setIsFilterModalOpen(true)}
-                  >
-                    <span>
-                      <Filter />
-                    </span>
-                    Filter
-                  </button>
-                </div>
-              </div>
-            </div>
+            <Filters />
           </div>
           {viewMode === "list" ? (
             <LoanList
