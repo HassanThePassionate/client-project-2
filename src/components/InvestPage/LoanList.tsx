@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import style from "./invest.module.css";
 import GiftIcon from "../svgs/GiftIcon";
 import { cn } from "@/lib/utils";
+import { useNavigate } from "react-router-dom";
 interface LoanListProps {
   loans: Loan[];
   sortField: keyof Loan;
@@ -22,7 +23,7 @@ export function LoanList({
   onSort,
 }: LoanListProps) {
   const SortIcon = sortDirection === "asc" ? ArrowUp : ArrowDown;
-
+  const navigate = useNavigate();
   const renderSortableHeader = (field: keyof Loan, label: string) => (
     <th
       className='p-4 text-left text-xs text-[#58626f] cursor-pointer font-normal '
@@ -150,7 +151,10 @@ export function LoanList({
                   </Badge>
                 </td>
                 <td className='px-4 py-4'>
-                  <Button className='bg-blue-600 hover:bg-blue-700 cursor-pointer'>
+                  <Button
+                    onClick={() => navigate("/property-detail")}
+                    className='bg-blue-600 hover:bg-blue-700 cursor-pointer'
+                  >
                     Invest
                   </Button>
                 </td>

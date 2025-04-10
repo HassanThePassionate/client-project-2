@@ -119,3 +119,30 @@
     @apply bg-[#F7F9FB] text-foreground;
   }
 }
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 0 !important;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  color: black !important;
+  height: 36px !important;
+  width: 36px !important;
+}
+
+.swiper-button-prev svg {
+  height: 24px !important;
+  width: 24px !important;
+}
+.swiper-button-next svg {
+  height: 24px !important;
+  width: 24px !important;
+}
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: #f2f2f2;
+}
+.swiper-wrapper {
+  display: flex;
+  height: 100%;
+}

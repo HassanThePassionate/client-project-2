@@ -3,6 +3,7 @@ import Layout from "./components/layout/Layout";
 import Dashboard from "./components/dashboardPage/Dashboard";
 import InvestPage from "./components/InvestPage/InvestPage";
 import PortfolioPage from "./components/portfolioPage/PortfolioPage";
+import PropertyLoanDetails from "./components/propertyDetail/PropertyDetail";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           <Route index element={<Dashboard />} />
           <Route path='/invest' element={<InvestPage />} />
           <Route path='/portfolio' element={<PortfolioPage />} />
+          <Route path='/property-detail' element={<PropertyLoanDetails />} />
         </Route>
       </Routes>
     </Router>
