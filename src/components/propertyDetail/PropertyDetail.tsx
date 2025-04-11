@@ -65,7 +65,7 @@ export default function PropertyLoanDetails() {
           defaultValue='project-info'
           className='block !justify-start mt-6 mb-6'
         >
-          <TabsList className=' w-full flex justify-start gap-6 bg-transparent'>
+          <TabsList className=' w-full flex justify-start gap-6 flex-wrap mb-12 bg-transparent'>
             <TabsTrigger
               value='project-info'
               className='!bg-transparent !shadow-none cursor-pointer'

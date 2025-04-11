@@ -4,6 +4,8 @@ import Search from "../svgs/Search";
 import { cn } from "@/lib/utils";
 import style from "./invest.module.css";
 import { useFilter } from "../context/filter-context";
+import DownloadBtn from "../portfolioPage/DownloadBtn";
+import { useLocation } from "react-router-dom";
 const Filters = () => {
   const {
     searchQuery,
@@ -12,10 +14,12 @@ const Filters = () => {
     setViewMode,
     setIsFilterModalOpen,
   } = useFilter();
+  const location = useLocation();
+  const path = location.pathname;
   return (
     <div className={cn("!justify-end", style.filters)}>
-      <div className='min-w-[456px] gap-3 px-6 flex justify-end self-start'>
-        <div className={style.search}>
+      <div className='  max-sm:max-w-[400px] gap-3 px-6 flex justify-end flex-wrap self-start'>
+        <div className={cn("max-[370px]:ma-w-[290px]", style.search)}>
           <span className='text-[#8e959e] mr-3'>
             <Search />
           </span>
@@ -38,6 +42,8 @@ const Filters = () => {
             Filter
           </button>
         </div>
+        {path === "/invest"}
+        <DownloadBtn />
       </div>
     </div>
   );

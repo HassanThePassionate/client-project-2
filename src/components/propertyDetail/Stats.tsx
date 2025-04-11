@@ -8,9 +8,10 @@ import style from "./property.module.css";
 import { Info } from "lucide-react";
 import EstoniaFlag from "../svgs/EstoniaFlag";
 import Progress from "./Progress";
+import { cn } from "@/lib/utils";
 const Stats = () => {
   return (
-    <div className={style.stats}>
+    <div className={cn("max-sm:!flex-col max-sm:!items-start", style.stats)}>
       <div className='flex flex-col items-center'>
         <div className='flex flex-col gap-4 '>
           <Progress />
@@ -27,7 +28,9 @@ const Stats = () => {
             <span className='text-sm text-[#58626f] leading-[20px] pb-1  flex items-center'>
               Amount
             </span>
-            <span className='text-lg font-medium leading-[28px]'>€70,700</span>
+            <span className='text-lg font-medium leading-[28px] max-sm:text-sm'>
+              €70,700
+            </span>
           </div>
 
           <div style={{ flex: "1 1 0%" }}>
@@ -44,7 +47,7 @@ const Stats = () => {
                 </Tooltip>
               </TooltipProvider>
             </span>
-            <span className='text-lg font-medium leading-[28px]'>
+            <span className='text-lg font-medium leading-[28px] max-sm:text-sm'>
               12 months
             </span>
           </div>
@@ -62,7 +65,9 @@ const Stats = () => {
                 </Tooltip>
               </TooltipProvider>
             </span>
-            <span className='text-lg font-medium leading-[28px]'>7.5%+1%</span>
+            <span className='text-lg font-medium leading-[28px] max-sm:text-sm'>
+              7.5%+1%
+            </span>
           </div>
         </div>
 
@@ -71,7 +76,7 @@ const Stats = () => {
             <span className='text-sm text-[#58626f] leading-[20px] pb-1 flex items-center'>
               Country
             </span>
-            <span className='text-lg font-medium leading-[28px] flex items-center gap-1'>
+            <span className='text-lg font-medium leading-[28px] max-sm:text-sm flex items-center gap-1'>
               Estonia <EstoniaFlag />
             </span>
           </div>
@@ -89,7 +94,9 @@ const Stats = () => {
                 </Tooltip>
               </TooltipProvider>
             </span>
-            <span className='text-lg font-medium leading-[28px]'>Bullet</span>
+            <span className='text-lg font-medium leading-[28px] max-sm:text-sm'>
+              Bullet
+            </span>
             <div className='text-xs text-[#58626f]'>Quarterly payments</div>
           </div>
           <div style={{ flex: "1 1 0%" }}></div>

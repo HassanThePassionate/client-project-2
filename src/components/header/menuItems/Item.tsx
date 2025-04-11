@@ -9,8 +9,9 @@ const Item = ({ text, link }: { text: string; link: string }) => {
       <Link
         to={link}
         className={cn(
+          "max-md:!text-black max-md:!py-2",
           style["list-item"],
-          pathname === link && "!text-[#c8d2ff]"
+          pathname === link && "md:!text-[#c8d2ff] !text-[#212f40]"
         )}
       >
         {text}

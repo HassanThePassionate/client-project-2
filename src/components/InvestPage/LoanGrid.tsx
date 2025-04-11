@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/tooltip";
 import GiftIcon from "../svgs/GiftIcon";
 import { Progress } from "../ui/progress";
+import { useNavigate } from "react-router-dom";
 
 interface LoanGridProps {
   loans: Loan[];
@@ -51,7 +52,7 @@ export function LoanGrid({ loans }: LoanGridProps) {
       [loanId]: index,
     }));
   };
-
+  const navigate = useNavigate();
   return (
     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 gap-y-10 px-6'>
       {loans.map((loan) => {
@@ -233,7 +234,10 @@ export function LoanGrid({ loans }: LoanGridProps) {
                 </div>
               </div>
 
-              <Button className='w-full bg-blue-600 hover:bg-blue-700 mt-2'>
+              <Button
+                onClick={() => navigate("/property-detail")}
+                className='w-full bg-blue-600 hover:bg-blue-700 mt-2'
+              >
                 Invest
               </Button>
             </div>

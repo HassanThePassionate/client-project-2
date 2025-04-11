@@ -9,7 +9,7 @@ import FileSearch from "../svgs/FileSearch";
 import { Link } from "react-router-dom";
 
 import Filters from "../InvestPage/Filters";
-import DownloadBtn from "../portfolioPage/DownloadBtn";
+
 import BriefCaseIcon from "@/components/svgs/BriefCaseIcon";
 
 type InvestmentType = "active" | "finish";
@@ -51,8 +51,10 @@ export default function InvestmentDashboard({
     <div className={cn("w-full rounded-lg border bg-white ", className)}>
       <div>
         {!doubleFilters && (
-          <div className='mb-6 flex items-center justify-between py-7 px-6'>
-            <h2 className='text-2xl font-semibold text-gray-900'>{title}</h2>
+          <div className='mb-6 flex min-[400px]:items-center items-start justify-between gap-4 max-sm:flex-col py-7 px-6'>
+            <h2 className='sm:text-2xl text-lg font-semibold text-gray-900'>
+              {title}
+            </h2>
             <Toggle onChange={setActiveTab} viewMode={activeTab} />
           </div>
         )}
@@ -61,12 +63,11 @@ export default function InvestmentDashboard({
             <h2 className='text-2xl  py-7 px-6 font-semibold text-gray-900'>
               {title}
             </h2>
-            <div className='flex items-center justify-between'>
+            <div className='flex items-center justify-between flex-wrap gap-6'>
               <div className='w-full pl-6'>
                 <Toggle onChange={setActiveTab} viewMode={activeTab} />
               </div>
               <Filters />
-              <DownloadBtn />
             </div>
           </>
         )}
@@ -119,7 +120,7 @@ export default function InvestmentDashboard({
                 <FileSearch />
               </div>
               <div className='flex flex-col'>
-                <h3 className='mb-2 text-[20px] font-semibold leading-[28px]'>
+                <h3 className='mb-2 sm:text-[20px] text-base font-semibold leading-[28px]'>
                   No matching results
                 </h3>
                 <p className='mb-4 text-sm text-gray-500 flex flex-col'>

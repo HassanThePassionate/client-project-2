@@ -18,7 +18,7 @@ const Notification = () => {
       <PopoverTrigger className={styles["dropdown-trigger"]}>
         <BellIcon />
       </PopoverTrigger>
-      <PopoverContent className='max-h-[821px] overflow-y-auto bg-white max-w-[600px] w-full p-0 mt-2 rounded-b-[4px] rounded-t-none ml-4 '>
+      <PopoverContent className='max-h-[821px] overflow-y-auto bg-white md:max-w-[600px] w-full p-0 mt-2 rounded-b-[4px] rounded-t-none ml-4 max-w-[315px] max-md:mr-6 '>
         <div className={style.header}>
           <div className='font-medium text-[#212f40] text-lg leading-[28px]'>
             Notifications

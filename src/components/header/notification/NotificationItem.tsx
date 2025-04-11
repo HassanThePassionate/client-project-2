@@ -8,7 +8,7 @@ const NotificationItem = () => {
         <div className={style.profile}>
           <Profile1Icon />
         </div>
-        <div className={style.content}>
+        <div className={cn("max-md:!max-w-[195px] ", style.content)}>
           <div className={style.heading}>
             New project on Estateguru :#71530233 Development loan - 1.stage
             (Latvia)

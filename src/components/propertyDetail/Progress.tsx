@@ -3,7 +3,7 @@ const Progress = () => {
   return (
     <div className='relative'>
       <div className={style["progress-content"]}>
-        <div className='text-2xl leading-[32px] font-medium whitespace-nowrap'>
+        <div className='sm:text-2xl text-base leading-[32px] font-medium whitespace-nowrap'>
           80%
         </div>
         <div className='text-[#58626f] leading-[18px] text-xs font-medium whitespace-nowrap text-center'>

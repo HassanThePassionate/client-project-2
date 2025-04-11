@@ -131,7 +131,7 @@ const InvestPage = () => {
           <div className='flex flex-col gap-8 mb-4'>
             <div className='flex flex-col px-6 pt-5 pb-3'>
               <div className='flex items-center gap-2'>
-                <h2 className='text-[28px] font-semibold leading-[36px]'>
+                <h2 className='sm:text-[28px] text-lg font-semibold leading-[36px]'>
                   Loans available to invest
                 </h2>
                 <span className={style.badge}>

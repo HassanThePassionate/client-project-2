@@ -15,7 +15,7 @@ const RiskAssessment = () => {
       <h2 className='font-medium mb-3 text-2xl leading-[32px]'>
         Risk assessment
       </h2>
-      <div className='flex gap-6 p-6 border border-[#e1e3e5] rounded-[8px]'>
+      <div className='flex gap-6 p-6 max-sm:flex-col border border-[#e1e3e5] rounded-[8px]'>
         <div className='flex w-full'>
           <div style={{ flex: "1 1 0%" }}>
             <div className='text-sm text-[#58626f] flex items-center gap-1 pb-1 leading-5'>

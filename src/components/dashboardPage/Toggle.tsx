@@ -7,8 +7,8 @@ interface ToggleProps {
 
 const Toggle = ({ viewMode, onChange }: ToggleProps) => {
   return (
-    <div className='flex gap-3'>
-      <div className={style.view}>
+    <div className='flex gap-3 '>
+      <div className={cn("max-sm:w-[250px] max-[350px]:!w-auto", style.view)}>
         <button
           className={cn(
             style["list-view"],

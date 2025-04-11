@@ -10,7 +10,7 @@ import GiftIcon from "../svgs/GiftIcon";
 import Eye from "../svgs/Eye";
 const Slider = () => {
   return (
-    <div className='relative h-[560px]'>
+    <div className='relative h-[500px] sm:h-[560px]'>
       <Swiper
         modules={[Navigation]}
         navigation={{
@@ -57,7 +57,7 @@ const Slider = () => {
           <Clock className='h-4 w-4 mr-1' />4 Days Left
         </span>
       </div>
-      <div className='absolute top-4 right-4 z-10 flex gap-2'>
+      <div className='absolute top-4 right-4 z-10 flex gap-2 max-sm:hidden '>
         <div className={style.badge2}>
           <GiftIcon />
           Up to 1% Bonus interest

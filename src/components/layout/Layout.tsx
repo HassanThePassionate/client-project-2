@@ -6,7 +6,7 @@ const Layout = () => {
     <>
       <Header />
 
-      <div className='py-[40px] px-12 min-w-[320px] mb-12 max-w-[1440px] my-0 mx-auto w-full'>
+      <div className='py-[40px] px-6 sm:px-12 min-w-[320px] mb-12 max-w-[1440px] my-0 mx-auto w-full'>
         <Outlet />
       </div>
       <Footer />
