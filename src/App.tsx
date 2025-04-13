@@ -4,6 +4,8 @@ import Dashboard from "./components/dashboardPage/Dashboard";
 import InvestPage from "./components/InvestPage/InvestPage";
 import PortfolioPage from "./components/portfolioPage/PortfolioPage";
 import PropertyLoanDetails from "./components/propertyDetail/PropertyDetail";
+import Register from "./components/AuthPages/Register";
+import Login from "./components/AuthPages/Login";
 
 function App() {
   return (
@@ -11,10 +13,13 @@ function App() {
       <Routes>
         <Route path='/' element={<Layout />}>
           <Route index element={<Dashboard />} />
-          <Route path='/invest' element={<InvestPage />} />
-          <Route path='/portfolio' element={<PortfolioPage />} />
-          <Route path='/property-detail' element={<PropertyLoanDetails />} />
+          <Route path='invest' element={<InvestPage />} />
+          <Route path='portfolio' element={<PortfolioPage />} />
+          <Route path='property-detail' element={<PropertyLoanDetails />} />
         </Route>
+
+        <Route path='/register' element={<Register />} />
+        <Route path='/login' element={<Login />} />
       </Routes>
     </Router>
   );
