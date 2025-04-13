@@ -12,7 +12,7 @@ import { Loader2 } from "lucide-react";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { PasswordInput } from "./PasswordInput";
 import Heading from "./Heading";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 // Form validation schema
 const loginFormSchema = z.object({
@@ -28,7 +28,7 @@ type LoginFormValues = z.infer<typeof loginFormSchema>;
 export default function LoginForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [loginError, setLoginError] = useState<string | null>(null);
-
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -49,7 +49,7 @@ export default function LoginForm() {
     try {
       // Simulate login API call
       await new Promise((resolve) => setTimeout(resolve, 1500));
-
+      navigate("/dashboard");
       console.log("Login attempt:", data);
 
       // Redirect to dashboard would happen here

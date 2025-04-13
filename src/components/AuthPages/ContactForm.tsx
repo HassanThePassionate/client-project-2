@@ -24,7 +24,7 @@ import { PhoneInput } from "./PhoneInput";
 import { PasswordInput } from "./PasswordInput";
 import { submitContactForm } from "@/lib/form-action";
 import Heading from "./Heading";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 // Form validation schema
 const formSchema = z.object({
@@ -47,7 +47,7 @@ export default function ContactForm() {
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [countryCode, setCountryCode] = useState("+351");
-
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -78,8 +78,9 @@ export default function ContactForm() {
 
       await submitContactForm(formattedData);
       setSubmitSuccess(true);
-      reset();
 
+      reset();
+      navigate("/dashboard");
       // Reset success message after 5 seconds
       setTimeout(() => {
         setSubmitSuccess(false);

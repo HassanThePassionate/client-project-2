@@ -11,15 +11,19 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<Layout />}>
+        {/* Jab user root path (/) pe aaye, Register dikhe */}
+        <Route path='/' element={<Register />} />
+
+        <Route path='/register' element={<Register />} />
+        <Route path='/login' element={<Login />} />
+
+        {/* Baaki layout ke andar wale pages */}
+        <Route path='/dashboard' element={<Layout />}>
           <Route index element={<Dashboard />} />
           <Route path='invest' element={<InvestPage />} />
           <Route path='portfolio' element={<PortfolioPage />} />
           <Route path='property-detail' element={<PropertyLoanDetails />} />
         </Route>
-
-        <Route path='/register' element={<Register />} />
-        <Route path='/login' element={<Login />} />
       </Routes>
     </Router>
   );
