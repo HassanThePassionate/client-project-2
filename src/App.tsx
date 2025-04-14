@@ -6,18 +6,21 @@ import PortfolioPage from "./components/portfolioPage/PortfolioPage";
 import PropertyLoanDetails from "./components/propertyDetail/PropertyDetail";
 import Register from "./components/AuthPages/Register";
 import Login from "./components/AuthPages/Login";
+import AdminLayout from "./components/layout/AdminLayout";
+import AdminDashBoard from "./components/admin/AdminDashBoard";
+import Users from "./components/admin/Users";
 
 function App() {
   return (
     <Router>
       <Routes>
-        {/* Jab user root path (/) pe aaye, Register dikhe */}
         <Route path='/' element={<Register />} />
-
         <Route path='/register' element={<Register />} />
         <Route path='/login' element={<Login />} />
-
-        {/* Baaki layout ke andar wale pages */}
+        <Route path='/admin' element={<AdminLayout />}>
+          <Route path='dashboard' index element={<AdminDashBoard />} />
+          <Route path='users' element={<Users />} />
+        </Route>
         <Route path='/dashboard' element={<Layout />}>
           <Route index element={<Dashboard />} />
           <Route path='invest' element={<InvestPage />} />
