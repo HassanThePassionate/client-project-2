@@ -35,12 +35,12 @@ const data = {
     },
     {
       title: "Registration Requests",
-      url: "#",
+      url: "registration-request",
       icon: IconChartBar,
     },
     {
       title: "Investment Opportunities",
-      url: "#",
+      url: "investment-opportunities",
       icon: IconFolder,
     },
   ],

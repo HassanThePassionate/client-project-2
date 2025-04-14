@@ -9,6 +9,8 @@ import Login from "./components/AuthPages/Login";
 import AdminLayout from "./components/layout/AdminLayout";
 import AdminDashBoard from "./components/admin/AdminDashBoard";
 import Users from "./components/admin/Users";
+import RegistrationRequest from "./components/admin/RegistrationRequest";
+import InvestmentOpportunities from "./components/admin/InvestmentOpportunities";
 
 function App() {
   return (
@@ -20,6 +22,14 @@ function App() {
         <Route path='/admin' element={<AdminLayout />}>
           <Route path='dashboard' index element={<AdminDashBoard />} />
           <Route path='users' element={<Users />} />
+          <Route
+            path='registration-request'
+            element={<RegistrationRequest />}
+          />
+          <Route
+            path='investment-opportunities'
+            element={<InvestmentOpportunities />}
+          />
         </Route>
         <Route path='/dashboard' element={<Layout />}>
           <Route index element={<Dashboard />} />
