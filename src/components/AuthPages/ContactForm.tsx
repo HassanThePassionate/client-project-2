@@ -25,6 +25,7 @@ import { PasswordInput } from "./PasswordInput";
 import { submitContactForm } from "@/lib/form-action";
 import Heading from "./Heading";
 import { Link, useNavigate } from "react-router-dom";
+import OTPAlert from "./OTPAlert";
 
 // Form validation schema
 const formSchema = z.object({
@@ -252,6 +253,7 @@ export default function ContactForm() {
         >
           Login
         </Link>
+        <OTPAlert />
       </div>
     </form>
   );

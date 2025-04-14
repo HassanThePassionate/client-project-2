@@ -19,6 +19,7 @@ import {
 } from "@/components/ui/sidebar";
 import Logout from "./svgs/Logout";
 import Users from "./svgs/Users";
+import { useNavigate } from "react-router-dom";
 
 const data = {
   navMain: [
@@ -46,6 +47,8 @@ const data = {
 };
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const navigate = useNavigate();
+
   return (
     <Sidebar collapsible='offcanvas' {...props}>
       <SidebarHeader>
@@ -66,7 +69,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarContent>
         <NavMain items={data.navMain} />
       </SidebarContent>
-      <SidebarFooter className='  bg-black text-white flex items-center gap-2 mb-2  mx-2 flex-row rounded-md h-[46px] text-sm cursor-pointer hover:bg-[#333]'>
+      <SidebarFooter
+        onClick={() => navigate("/login")}
+        className='  bg-black text-white flex items-center gap-2 mb-2  mx-2 flex-row rounded-md h-[46px] text-sm cursor-pointer hover:bg-[#333]'
+      >
         <Logout />
         Sign out
       </SidebarFooter>

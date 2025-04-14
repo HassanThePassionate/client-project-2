@@ -13,6 +13,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 import { PasswordInput } from "./PasswordInput";
 import Heading from "./Heading";
 import { Link, useNavigate } from "react-router-dom";
+import OTPAlert from "./OTPAlert";
 
 // Form validation schema
 const loginFormSchema = z.object({
@@ -144,6 +145,7 @@ export default function LoginForm() {
         >
           Register
         </Link>
+        <OTPAlert />
       </div>
     </div>
   );
