@@ -53,7 +53,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <SidebarMenuItem>
             <SidebarMenuButton
               asChild
-              className='data-[slot=sidebar-menu-button]:!p-1.5'
+              className='data-[slot=sidebar-menu-button]:!p-1.5 '
             >
               <a href='#'>
                 <IconInnerShadowTop className='!size-5' />
@@ -66,7 +66,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarContent>
         <NavMain items={data.navMain} />
       </SidebarContent>
-      <SidebarFooter className='w-full bg-black text-white flex items-center gap-2  flex-row rounded-md h-[46px] text-sm cursor-pointer hover:bg-[#333]'>
+      <SidebarFooter className='  bg-black text-white flex items-center gap-2 mb-2  mx-2 flex-row rounded-md h-[46px] text-sm cursor-pointer hover:bg-[#333]'>
         <Logout />
         Sign out
       </SidebarFooter>
