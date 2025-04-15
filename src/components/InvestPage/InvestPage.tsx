@@ -9,6 +9,8 @@ import { getLoanData } from "@/constant/LoanData";
 import { FilterModal, type FilterState } from "./FilterModal";
 import Filters from "./Filters";
 import { useFilter } from "../context/filter-context";
+import { Button } from "../ui/button";
+import { useNavigate } from "react-router-dom";
 
 const InvestPage = () => {
   const { searchQuery, viewMode, setIsFilterModalOpen, isFilterModalOpen } =
@@ -119,7 +121,7 @@ const InvestPage = () => {
     setActiveFilters(filters);
   };
 
-  // Function to change the filter type
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -129,7 +131,7 @@ const InvestPage = () => {
         </h1>
         <div className='bg-white border border-[#eaecee] rounded-[8px] '>
           <div className='flex flex-col gap-8 mb-4'>
-            <div className='flex flex-col px-6 pt-5 pb-3'>
+            <div className='flex items-center justify-between px-6 pt-5 pb-3'>
               <div className='flex items-center gap-2'>
                 <h2 className='sm:text-[28px] text-lg font-semibold leading-[36px]'>
                   Loans available to invest
@@ -138,6 +140,12 @@ const InvestPage = () => {
                   {filteredLoans.length} open loans
                 </span>
               </div>
+              <Button
+                onClick={() => navigate("/sell")}
+                className='cursor-pointer bg-blue-600 hover:bg-blue-700'
+              >
+                Sell your Property
+              </Button>
             </div>
             <Filters />
           </div>

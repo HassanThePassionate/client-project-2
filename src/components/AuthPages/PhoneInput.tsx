@@ -35,8 +35,8 @@ export const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
             <SelectValue placeholder='91' />
           </SelectTrigger>
           <SelectContent className='max-h-[300px] overflow-y-auto'>
-            {countries.map((c) => (
-              <SelectItem key={c.code} value={c.dialCode}>
+            {countries.map((c, i) => (
+              <SelectItem key={i} value={c.dialCode}>
                 <div className='flex items-center gap-2'>
                   <span className={`fi fi-${c.code} h-4 w-6 rounded-sm`}></span>
                   <span>{c.dialCode}</span>
